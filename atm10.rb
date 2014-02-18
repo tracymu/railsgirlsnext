@@ -1,11 +1,11 @@
 def withdraw(amount)
-  remainder = amount%5
+  remainder = amount%10
   notes =[]
   if remainder != 0 || amount == 0
     return false
   else
-    number = amount/5
-    number.times {|i| notes << 5 }
+    number = amount/10
+    number.times {|i| notes << 10 }
   end
   return notes
 
@@ -28,10 +28,10 @@ describe 'atm' do
   [
     [-1, false],
     [0, false],
-    [1, false],
-    [43, false],
-    [20, [5, 5, 5, 5]],
-    [35, [5, 5, 5, 5, 5, 5, 5]],
+    [7, false],
+    [45, false],
+    [20, [10, 10]],
+    [40, [10, 10, 10, 10]],
   ].each do |input, expected|
     it "should return #{expected} when $#{input} is withdrawn" do
       withdraw(input).must_equal expected
