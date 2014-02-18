@@ -1,5 +1,4 @@
 def withdraw(amount)
-
   remainder = amount%5
   notes =[]
   if remainder != 0
@@ -15,6 +14,6 @@ end
 
 puts "How much money do you want?"
 
-amount = gets
+amount = gets.to_i
 
 puts withdraw(amount)
